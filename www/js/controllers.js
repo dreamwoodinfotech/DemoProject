@@ -1,10 +1,15 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {
+.controller('DashCtrl', function($scope,$cordovaFileTransfer) {
     
     $scope.showAlert = function(){
         
         alert("ABC");
+    }
+    
+    $scope.showDownload = function(){
+        
+        alert("Download");
     }
     
 })
