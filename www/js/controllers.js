@@ -9,7 +9,28 @@ angular.module('starter.controllers', [])
     
     $scope.showDownload = function(){
         
-        alert("Download");
+        alert("Downloading");
+        
+        var url = "http://ionicapp.890m.com/files/pic.jpg";
+        var targetPath = "/sdcard/Download/1.jpg";  //cordova.file.documentsDirectory
+        var trustHosts = true;
+        var options = {};
+
+        $cordovaFileTransfer.download(url, targetPath, options, trustHosts)
+          .then(function(result) {
+            // Success!
+            alert("SUCCESS: " + JSON.stringify(result.response));
+          }, function(err) {
+            // Error
+            alert("file not downloaded "+angular.toJson(err));
+          }, function (progress) {
+            $timeout(function () {
+              $scope.downloadProgress = (progress.loaded / progress.total) * 100;
+            });
+          });
+          alert("done downloaded");
+      };
+    
     }
     
 })
