@@ -31,7 +31,7 @@ angular.module('starter.controllers', [])
           alert("done downloaded");
       };
     
-    }
+    
     
 })
 
