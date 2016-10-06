@@ -11,7 +11,7 @@ angular.module('starter.controllers', [])
         
         alert("Downloading");
         
-        var url = "http://192.168.0.108/MobileApp/files/pic.jpg";
+        var url = "http://ionicapp.890m.com/files/pic.jpg";
         var targetPath = "/sdcard/Download/1.jpg";  //cordova.file.documentsDirectory
         var trustHosts = true;
         var options = {};
